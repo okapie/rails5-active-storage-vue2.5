@@ -1,0 +1,28 @@
+# Ignore files generated in macOS
+.idea/
+.DS_Store
+
+# Ignore node_modules and relevant files
+/node_modules/
+package-lock.json
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Ignore dist
+/dist/
+
+# Ignore test reports
+/test/unit/coverage/
+/test/e2e/reports/
+selenium-debug.log
+
+# Ignore vendor
+/vendor/
+
+# Other
+.vscode
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
