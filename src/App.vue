@@ -1,6 +1,17 @@
 <template>
   <div id="app">
-    <img src="./assets/logo.png">
+    <div class="header">
+      <router-link to="/">
+        <button>
+          TOP
+        </button>
+      </router-link>
+      <router-link to="/users">
+        <button>
+          USERS
+        </button>
+      </router-link>
+    </div>
     <router-view/>
   </div>
 </template>
@@ -12,12 +23,26 @@ export default {
 </script>
 
 <style>
-#app {
-  font-family: 'Avenir', Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
-}
+  #app {
+    font-family: 'Avenir', Helvetica, Arial, sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    text-align: center;
+    color: #2c3e50;
+    margin: 0;
+    padding: 0;
+  }
+
+  .header {
+    margin: 0;
+    padding: 4px 0 0 4px;
+    background: #9b9877;
+    text-align: left;
+  }
+
+  button {
+    width: 300px;
+    height: 60px;
+    font-size: 16px;
+  }
 </style>
