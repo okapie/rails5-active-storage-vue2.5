@@ -11,6 +11,11 @@
           USERS
         </button>
       </router-link>
+      <router-link to="/uploader">
+        <button>
+          UPLOADER
+        </button>
+      </router-link>
     </div>
     <router-view/>
   </div>
