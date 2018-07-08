@@ -1,70 +1,64 @@
 <template>
   <div>
     <h1>Upload page.</h1>
-    <form id="app" @submit="checkForm" action="" method="post" novalidate="true">
-      <p v-if="errors && errors.length > 0">
+    <form id='app' @submit='onSubmit' action='' method='post' novalidate='true'>
+      <div v-if='errors && errors.length > 0'>
         <b>Please correct the following error(s):</b>
-      <ul>
-        <li v-for="error in errors">{{ error }}</li>
-      </ul>
-      </p>
-      <p>
-        <label for="name">Name</label>
-        <input type="text" name="name" id="name" v-model="name">
-      </p>
-      <p>
-        <label for="email">Email</label>
-        <input type="email" name="email" id="email" v-model="email">
-      </p>
-      <p>
-        <label for="movie">Favorite Movie</label>
-        <select name="movie" id="movie" v-model="movie">
-          <option>Star Wars</option>
-          <option>Vanilla Sky</option>
-          <option>Atomic Blonde</option>
-        </select>
-      </p>
-      <p>
-        <input type="submit" value="Submit">
-      </p>
+        <ul>
+          <li v-for='error in errors' v-bind:key='error.id'>{{ error }}</li>
+        </ul>
+      </div>
+      <div>
+        <label for='title'>Title</label>
+        <input type='text' name='item[title]' id='title' v-model='title'>
+      </div>
+      <div>
+        <label for='description'>Description</label>
+        <input type='email' name='item[description]' id='description' v-model='description'>
+      </div>
+      <div>
+        <input
+          type='file'
+          @change='selectedFile'
+          name='item[picture]'
+          accept='image/*'
+          placeholder='Upload file...'
+        />
+      </div>
+      <div>
+        <input type='submit' value='Submit'>
+      </div>
     </form>
   </div>
 </template>
 
 <script>
-  export default {
-    data: function() {
-      return {
-        errors: [],
-        name: null,
-        email: null,
-        movie: null
-      }
+import axios from 'axios'
+export default {
+  data: function () {
+    return {
+      errors: [],
+      title: null,
+      description: null,
+      picture: null,
+      uploadFile: null
+    }
+  },
+  methods: {
+    selectedFile: function (e) {
+      e.preventDefault()
+      const files = e.target.files
+      this.uploadFile = files[0]
     },
-    methods: {
-      checkForm: function (e) {
-        this.errors = [];
-
-        if (!this.name) {
-          this.errors.push("Name required.");
-        }
-
-        if (!this.email) {
-          this.errors.push('Email required.');
-        } else if (!this.validEmail(this.email)) {
-          this.errors.push('Valid email required.');
-        }
-
-        if (!this.errors.length) {
-          return true;
-        }
-
-        e.preventDefault();
-      },
-      validEmail: function (email) {
-        var re = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
-        return re.test(email);
-      }
+    onSubmit: function (e) {
+      e.preventDefault()
+      const formData = new FormData()
+      formData.append('item[title]', this.title)
+      formData.append('item[description]', this.description)
+      formData.append('item[picture]', this.uploadFile)
+      axios.post('http://127.0.0.1:3000/items', formData)
+        .then(res => console.log(res))
     }
   }
+}
 </script>

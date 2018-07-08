@@ -3,7 +3,7 @@ import Router from 'vue-router'
 import Top from '@/components/Top'
 import Users from '@/components/Users'
 import UserDetail from '@/components/UserDetail'
-import Uploader from "@/components/Uploader"
+import Uploader from '@/components/Uploader'
 
 Vue.use(Router)
 
@@ -25,8 +25,8 @@ export default new Router({
       component: UserDetail
     },
     {
-      path: "/uploader",
-      name: "Uploader",
+      path: '/uploader',
+      name: 'Uploader',
       component: Uploader
     }
   ]
