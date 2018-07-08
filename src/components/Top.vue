@@ -15,8 +15,8 @@
           </g>
         </svg>
       </div>
-      <div>
-        <img src="../assets/logo.png" width="60%" height="auto">
+      <div class="vueMarkLayout">
+        <img src="../assets/logo.png" width="100px" height="100px">
       </div>
     </div>
   </div>
@@ -36,9 +36,7 @@ export default {
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
   .wrapper {
-    width: 850px;
     text-align: center;
-    padding: 50px 0 20vh 50px;
   }
 
   .markLayout {
@@ -46,35 +44,8 @@ export default {
     justify-content: center;
   }
 
-  .list {
-    display: flex;
-    flex-wrap: wrap;
-    width: 500px;
-    margin-left: 20%;
-    border-top: 1px solid #000;
-    border-right: 1px solid #000;
-    border-left: 1px solid #000;
-  }
-
-  .term {
-    width: 140px;
-    border-right: 1px solid #000;
-    border-bottom: 1px solid #000;
-    background: #cacaca;
-    text-align: left;
-    padding: 14px 4px;
-  }
-
-  .description {
-    width: 342px;
-    margin: 0;
-    border-bottom: 1px solid #000;
-    display: flex;
-    -webkit-align-items: center;
-    -webkit-justify-content: center;
-    align-items: center;
-    justify-content: left;
-    padding: 14px 4px;
+  .vueMarkLayout {
+    padding-top: 14px;
   }
 
   input {

@@ -41,8 +41,16 @@ export default {
   }
 
   button {
-    width: 300px;
+    width: 100%;
     height: 60px;
     font-size: 16px;
+  }
+
+  @media screen and (min-width:768px){
+    button {
+      width: 300px;
+      height: 60px;
+      font-size: 16px;
+    }
   }
 </style>
