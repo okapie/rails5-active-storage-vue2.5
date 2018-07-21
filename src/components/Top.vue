@@ -27,7 +27,7 @@ export default {
   name: 'Top',
   data () {
     return {
-      msg: 'Ruby on Rails 5.1.2 + Vue.js v.2.9.6'
+      msg: 'Ruby on Rails 5.2.0 + Vue.js v.2.9.6'
     }
   }
 }
