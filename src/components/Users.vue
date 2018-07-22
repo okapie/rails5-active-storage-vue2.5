@@ -48,7 +48,13 @@ export default {
     }
   },
   beforeCreate: function () {
-    axios.get('http://localhost:3000/users.json')
+    const options = {
+      method: 'GET',
+      headers: {
+        'Access-Control-Allow-Origin': '*'
+      }
+    }
+    axios.get('http://127.0.0.1:3000/users.json', options)
       .then(res => {
         this.members = res.data
       })
