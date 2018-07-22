@@ -22,3 +22,6 @@
 
 # Ignore uploaded test images.
 /public/
+
+# Ignore storage folder.
+/storage/

@@ -57,7 +57,15 @@ export default {
       formData.append('item[description]', this.description)
       formData.append('item[picture]', this.uploadFile)
       axios.post('http://127.0.0.1:3000/items', formData)
-        .then(res => console.log(res))
+        .then(res => {
+          alert(`
+            Request succeeded !\n
+            id: ${res.data.id}
+            title: ${res.data.title}
+            description: ${res.data.description}
+            created_at: ${res.data.created_at}
+          `)
+        })
     }
   }
 }

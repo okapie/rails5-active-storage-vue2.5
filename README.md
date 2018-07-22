@@ -14,6 +14,10 @@ Run ```npm run dev``` for a dev server. Navigate to ```http://localhost:8080/```
 
 Start a rails API server with the command ```rails s -b 127.0.0.1```.
 
+You can also use command ```npm run api``` must be executed at the project root.
+
+This command resets ```storage``` directory to use Active Storage.
+
 ## Author
 
 okapie
