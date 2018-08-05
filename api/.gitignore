@@ -25,3 +25,9 @@
 
 # Ignore storage folder.
 /storage/
+
+# Ignore master key for decrypting credentials and more.
+/config/master.key
+
+# Ignore credentials.
+/config/credentials.yml.enc
