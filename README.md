@@ -1,10 +1,10 @@
-# rails5-active-storage-vue2.9
+# rails5-active-storage-vue2.5
 
 This project was generated with Vue CLI version 2.9.6.
 
 ## Description
 
-The project works on the framework using Vue.js version 2.9.6 to build a client-side and rails API mode to build a back-end.
+The project works on the framework using Vue.js to build a client-side and rails API mode to build a back-end.
 
 ## Development server
 
